@@ -272,13 +272,12 @@ router.put('/update', function (req, res) {
     console.log('Updating an event!');
     console.log(req.body);
     var myEvent = events.filter(function(event) {
-        console.log(event);
         return event.id === req.body.id;
     })[0];
     console.log(myEvent);
     myEvent.title = req.body.title;
     myEvent.details = req.body.details;
-    myEvent.dateString = req.body.dateString;
+    myEvent.date = req.body.date.dateString;
     myEvent.keywords = req.body.keywords;
 
     res.send(addIds(events));
