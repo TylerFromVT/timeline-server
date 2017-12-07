@@ -236,16 +236,60 @@ router.get('/', function (req, res, next) {
     res.render('index', {title: 'Express'});
 });
 
+
 router.get('/timeline', function (req, res, next) {
-    res.send(events);
+    res.send(addIds(events));
 });
 
+
+// Add Event
 router.post('/add', function (req, res) {
-    console.log('Post!');
+    console.log('Adding an event!');
     console.log(req.body);
     events.push(req.body);
 
-    res.send(events);
+    res.send(addIds(events));
 });
+
+// Add Event
+router.delete('/delete/:id', function (req, res) {
+    console.log('Deleting an event!');
+    console.log(req.params.id);
+    var newEvents = addIds(events).filter(function(event) {
+        if (event.id === +req.params.id) {
+            console.log('We have a winner');
+        }
+        return event.id !== +req.params.id;
+    });
+    // console.log(newEvents);
+    events = newEvents;
+
+    res.send(addIds(events));
+});
+
+// Update Event
+router.put('/update', function (req, res) {
+    console.log('Updating an event!');
+    console.log(req.body);
+    var myEvent = events.filter(function(event) {
+        console.log(event);
+        return event.id === req.body.id;
+    })[0];
+    console.log(myEvent);
+    myEvent.title = req.body.title;
+    myEvent.details = req.body.details;
+    myEvent.dateString = req.body.dateString;
+    myEvent.keywords = req.body.keywords;
+
+    res.send(addIds(events));
+});
+
+function addIds(events) {
+    var id = 0;
+    for (var i = 0; i < events.length; i++) {
+        events[i].id = id++;
+    }
+    return events;
+}
 
 module.exports = router;
