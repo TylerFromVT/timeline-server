@@ -2,6 +2,18 @@ var express = require('express');
 var router = express.Router();
 var events = [
     {
+        keywords: ['Tyler & Meg'],
+        date: 'May 2013',
+        title: 'Meg and Tyler vacation in Portugal',
+        details: 'Faro, Salema, Lisbon, Sintra, Evora and Esoi'
+    },
+    {
+        keywords: ['Tyler & Meg'],
+        date: 'May 2012',
+        title: 'Meg and Tyler vacation in Germany, France and Switzerland',
+        details: 'Baden Baden, Strousburg, Colmar, Benne and Basal'
+    },
+    {
         keywords: ['Brown'],
         date: 'August 19, 1875',
         title: 'Harry Gardner Brown born in Nebraska'
@@ -64,10 +76,24 @@ var events = [
     {
         keywords: ['Brown'],
         date: 'May 1970',
-        title: 'Betty, Ron and Tyler take extended east coast vacation',
+        title: 'Betty, Ron and Tyler take a very long vacation indeed down the southeastern coast of these United States',
         details: 'We visited the Okefenokee Swamp and paddled with alligators, stayed on Buck Lake and met the' +
         'folks from Canada who lived out of their RV and hiked in the Smokies. We had a skunk come into the Apache ' +
-        'pop-up camper one night.'
+        'pop-up camper one night. I also remember going on a glass-bottomed boat at Silver Spring Florida and being ' +
+        'able to see all the way to the bottom of the very deep lake. It was amazing. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis imperdiet eget ex ac volutpat. Integer ac risus commodo, sodales sapien et, mattis tellus. Fusce dignissim, tortor eu volutpat feugiat, quam tellus sagittis lorem, ut pharetra lectus mi quis eros. Ut pellentesque sapien sit amet lacus pellentesque, in sodales velit eleifend. Nunc vitae tortor sed velit pretium dapibus. Donec venenatis dolor leo, id vestibulum elit condimentum vel. Vivamus dignissim turpis vel lectus euismod pulvinar. Pellentesque quis eros et eros tincidunt vulputate id quis odio. Donec eu erat et orci consequat tincidunt. Ut ornare lorem ac purus laoreet, ut accumsan ex pharetra. Aliquam bibendum pellentesque viverra.\n' +
+        '\n' +
+        'Pellentesque ac ante pharetra, semper nulla id, sollicitudin ipsum. Fusce viverra ligula eget nulla facilisis, a cursus tellus ultrices. Nam sem odio, iaculis nec semper ac, lacinia sed metus. Nam gravida vel erat ut egestas. Fusce dui urna, molestie ut dignissim sed, varius non velit. Praesent quis mauris quis leo pulvinar posuere. Fusce varius malesuada efficitur.\n' +
+        '\n' +
+        'Nulla interdum pharetra dui, ac cursus lorem tristique a. Maecenas eu maximus justo. Ut id turpis eros. Maecenas finibus arcu eu leo luctus feugiat. Etiam sollicitudin sem eu eros maximus, in vehicula nulla porttitor. Mauris eu risus vel eros cursus pulvinar laoreet quis sem. In hac habitasse platea dictumst.\n' +
+        '\n' +
+        'Nulla et pellentesque quam. Integer fringilla imperdiet risus sit amet sollicitudin. Sed a turpis enim. Suspendisse pellentesque tortor non nibh hendrerit faucibus. Aenean sagittis sapien vitae tortor accumsan luctus. Nam vitae massa odio. Vestibulum eu mauris nisl. Donec aliquam velit metus, nec lobortis metus blandit porttitor. Vivamus id sollicitudin odio. Morbi sit amet finibus metus.\n' +
+        '\n' +
+        'Sed nec rhoncus nulla, commodo commodo arcu. Curabitur finibus lobortis tellus non auctor. Nunc at lacus sed ante maximus ullamcorper et sed augue. Etiam mattis interdum enim ut faucibus. Sed id ultrices sem, et interdum magna. In tincidunt, nisl in hendrerit consequat, velit dui ullamcorper nibh, non mollis enim augue non eros. In lorem lacus, laoreet eget ante tempus, imperdiet vulputate erat. Proin ac nibh tellus. Mauris pretium, eros sed feugiat efficitur, ante ipsum iaculis metus, sit amet faucibus dui ex eu metus. Nam consequat consequat accumsan. Suspendisse dolor tortor, tempus quis enim ac, sagittis lacinia mi. Nunc vitae mi et est pulvinar gravida.\n' +
+        '\n' +
+        'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus vehicula pharetra tincidunt. Nulla facilisi. Fusce dapibus dui id pretium imperdiet. Duis a libero risus. Vivamus rutrum tristique porttitor. Donec at eleifend augue, eu aliquam elit. Donec nisi nibh, dignissim sit amet metus nec, dictum vehicula nulla. Maecenas ut enim imperdiet, sollicitudin ante ac, interdum libero. Vestibulum vel rutrum felis, in tempor diam. Integer maximus mi at hendrerit auctor. Curabitur in felis ultrices, tincidunt urna eget, efficitur nulla. Duis quam diam, vestibulum vitae fermentum a, convallis ut tellus.\n' +
+        '\n' +
+        'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut maximus, sem convallis mattis cursus, magna enim vestibulum mi, sed facilisis mi lorem id purus. Donec sollicitudin quam in metus fermentum suscipit. Aenean molestie ex tortor.'
+
     },
     {
         keywords: ['Brown'],
