@@ -3,6 +3,11 @@ var router = express.Router();
 var events = [
     {
         keywords: ['Tyler & Meg'],
+        date: 'September 2015',
+        title: 'Meg and Tyler vacation in the Azores'
+    },
+    {
+        keywords: ['Tyler & Meg'],
         date: 'May 2013',
         title: 'Meg and Tyler vacation in Portugal',
         details: 'Faro, Salema, Lisbon, Sintra, Evora and Esoi'
@@ -267,17 +272,12 @@ router.get('/timeline', function (req, res, next) {
     res.send(addIds(events));
 });
 
-
-// Add Event
 router.post('/add', function (req, res) {
     console.log('Adding an event!');
-    console.log(req.body);
     events.push(req.body);
-
     res.send(addIds(events));
 });
 
-// Add Event
 router.delete('/delete/:id', function (req, res) {
     console.log('Deleting an event!');
     console.log(req.params.id);
@@ -303,7 +303,7 @@ router.put('/update', function (req, res) {
     console.log(myEvent);
     myEvent.title = req.body.title;
     myEvent.details = req.body.details;
-    myEvent.date = req.body.date.dateString;
+    myEvent.date = req.body.date;
     myEvent.keywords = req.body.keywords;
 
     res.send(addIds(events));
