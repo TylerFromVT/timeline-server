@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+
+var url = '/timeline';
 var events = [
     {
         keywords: ['Tyler & Meg'],
@@ -268,17 +270,17 @@ router.get('/', function (req, res, next) {
 });
 
 
-router.get('/timeline', function (req, res, next) {
+router.get(url, function (req, res, next) {
     res.send(addIds(events));
 });
 
-router.post('/add', function (req, res) {
+router.post(url, function (req, res) {
     console.log('Adding an event!');
     events.push(req.body);
     res.send(addIds(events));
 });
 
-router.delete('/delete/:id', function (req, res) {
+router.delete(url + '/:id', function (req, res) {
     console.log('Deleting an event!');
     console.log(req.params.id);
     var newEvents = addIds(events).filter(function(event) {
@@ -294,7 +296,7 @@ router.delete('/delete/:id', function (req, res) {
 });
 
 // Update Event
-router.put('/update', function (req, res) {
+router.put(url, function (req, res) {
     console.log('Updating an event!');
     console.log(req.body);
     var myEvent = events.filter(function(event) {
