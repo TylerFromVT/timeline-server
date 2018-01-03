@@ -22,12 +22,12 @@ var events = [
         'I\'ve earned everything I\'ve got.'
     },
     {
-        keywords: ['Nixon', 'Ford'],
+        keywords: ['Nixon'],
         date: 'August 9, 1974',
         title: 'Nixon resigns'
     },
     {
-        keywords: ['Nixon'],
+        keywords: ['Nixon', 'Ford'],
         date: 'September 8, 1974',
         title: 'Ford pardons Nixon',
         details: 'a tragedy in which we all have played a part. It could go on and on and on, or someone must write ' +
